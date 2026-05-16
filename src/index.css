@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "VT323", ui-monospace, SFMono-Regular, monospace;
+  --font-mono: "VT323", ui-monospace, SFMono-Regular, monospace;
+}
