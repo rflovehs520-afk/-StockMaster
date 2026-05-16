@@ -1,0 +1,42 @@
+名稱：部署到 GitHub Pages
+
+在：
+  推：
+    分支：["main"]
+
+權限：
+  內容：閱讀
+  頁面：寫入
+  id-token：寫入
+
+工作：
+  建造：
+    運行平台：ubuntu-latest
+    步驟：
+      -名稱：結帳
+        使用：actions/checkout@v4
+
+      -名稱：設定節點
+        使用：actions/setup-node@v4
+        和：
+          node 版本：20
+
+      -名稱：安裝依賴項
+        運行：npm install
+
+      -名稱：建置專案
+        運行：npm run build
+
+      -名稱：上傳工件
+        使用：actions/upload-pages-artifact@v3
+        和：
+          路徑：./dist
+
+  部署：
+    需要：建構
+    運行平台：ubuntu-latest
+    環境：
+      名稱：github-pages
+    步驟：
+      - name :部署到 GitHub Pages
+        使用：actions/deploy-pages@v4
